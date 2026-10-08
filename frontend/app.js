@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:4000/api';
+const API_URL = '/api';
 
 function renderProductCard(producto) {
   return `
@@ -59,6 +59,34 @@ async function loadHomeFeatured() {
     });
   } catch (error) {
     container.innerHTML = '<p>No se pudo cargar el catálogo destacado.</p>';
+  }
+}
+
+async function loadPromotions() {
+  const container = document.getElementById('promotions-list');
+  if (!container) return;
+
+  try {
+    const response = await fetch(`${API_URL}/promociones`);
+    if (!response.ok) throw new Error('Error al cargar promociones');
+    const promociones = await response.json();
+
+    container.innerHTML = promociones
+      .map(
+        (promo) => `
+          <article class="card">
+            <div class="card-body">
+              <p class="tag">${promo.tipo}</p>
+              <h3>${promo.nombre}</h3>
+              <p class="meta">${promo.descripcion}</p>
+              <div class="price">-${promo.descuento}%</div>
+            </div>
+          </article>
+        `
+      )
+      .join('');
+  } catch (error) {
+    container.innerHTML = '<p>No se pudo cargar la sección de promociones.</p>';
   }
 }
 
@@ -182,6 +210,7 @@ async function loadCart() {
 
 window.addEventListener('DOMContentLoaded', () => {
   loadHomeFeatured();
+  loadPromotions();
   loadCatalog();
   loadDetail();
   loadHistorial();

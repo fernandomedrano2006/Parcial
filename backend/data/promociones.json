@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nombre": "Promoción de lanzamiento",
+    "descripcion": "20% de descuento en libros de tecnología y programación.",
+    "tipo": "Descuento",
+    "descuento": 20,
+    "productoId": 2,
+    "fechaInicio": "2026-10-01",
+    "fechaFin": "2026-10-31"
+  },
+  {
+    "id": 2,
+    "nombre": "Oferta de lectura",
+    "descripcion": "15% de descuento en novelas de ficción y literatura.",
+    "tipo": "Descuento",
+    "descuento": 15,
+    "productoId": 1,
+    "fechaInicio": "2026-10-05",
+    "fechaFin": "2026-10-20"
+  },
+  {
+    "id": 3,
+    "nombre": "Pack de crecimiento personal",
+    "descripcion": "Combo ideal para desarrollo personal con descuento especial.",
+    "tipo": "Combo",
+    "descuento": 10,
+    "productoId": 3,
+    "fechaInicio": "2026-10-08",
+    "fechaFin": "2026-10-18"
+  }
+]

@@ -6,6 +6,7 @@ const categorias = require("./data/categorias.json");
 const productos = require("./data/productos.json");
 const pedidos = require("./data/pedidos.json");
 const historial = require("./data/historial.json");
+const promociones = require("./data/promociones.json");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -22,8 +23,12 @@ app.get("/", (req, res) => {
       "/api/categorias/:id",
       "/api/productos",
       "/api/productos/:id",
+      "/api/categorias",
+      "/api/categorias/:id",
       "/api/pedidos",
       "/api/pedidos/:id",
+      "/api/promociones",
+      "/api/promociones/:id",
       "/api/historial",
       "/api/historial/:usuarioId",
     ],
@@ -91,6 +96,17 @@ app.get("/api/pedidos/:id", (req, res) => {
   const pedido = pedidos.find((p) => p.id === id);
   if (!pedido) return res.status(404).json({ message: "Pedido no encontrado" });
   res.json(pedido);
+});
+
+app.get("/api/promociones", (req, res) => {
+  res.json(promociones);
+});
+
+app.get("/api/promociones/:id", (req, res) => {
+  const id = Number(req.params.id);
+  const promocion = promociones.find((p) => p.id === id);
+  if (!promocion) return res.status(404).json({ message: "Promoción no encontrada" });
+  res.json(promocion);
 });
 
 app.get("/api/historial", (req, res) => {
