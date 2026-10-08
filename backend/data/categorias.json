@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "nombre": "Ficción",
+    "descripcion": "Novelas y relatos imaginativos"
+  },
+  {
+    "id": 2,
+    "nombre": "Tecnología",
+    "descripcion": "Libros sobre programación, IA y innovación"
+  },
+  {
+    "id": 3,
+    "nombre": "Desarrollo personal",
+    "descripcion": "Temas de crecimiento profesional y bienestar"
+  },
+  {
+    "id": 4,
+    "nombre": "Académico",
+    "descripcion": "Material universitario y de estudio"
+  },
+  {
+    "id": 5,
+    "nombre": "Negocios",
+    "descripcion": "Gestión, liderazgo y emprendimiento"
+  }
+]

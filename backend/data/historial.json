@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "usuarioId": 1,
+    "libroId": 1,
+    "progreso": 68,
+    "fechaUltimaLectura": "2026-10-06",
+    "estado": "En curso"
+  },
+  {
+    "id": 2,
+    "usuarioId": 2,
+    "libroId": 2,
+    "progreso": 100,
+    "fechaUltimaLectura": "2026-10-04",
+    "estado": "Completado"
+  },
+  {
+    "id": 3,
+    "usuarioId": 3,
+    "libroId": 7,
+    "progreso": 45,
+    "fechaUltimaLectura": "2026-10-05",
+    "estado": "En curso"
+  }
+]
