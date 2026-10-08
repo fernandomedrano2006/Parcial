@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 4000;
 
 app.use(cors());
 
-app.get("/", (req, res) => {
+app.get(["/", "/api"], (req, res) => {
   res.json({
     message: "API BookNest funcionando correctamente",
     recursos: ["productos", "categorias", "pedidos", "promociones"],
