@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
-app.use(express.static(path.join(__dirname, "frontend")));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/api", (req, res) => {
   res.json({
@@ -113,25 +113,26 @@ app.get("/api/historial/:usuarioId", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "index.html"));
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.get("/catalogo", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "catalogo.html"));
+  res.sendFile(path.join(__dirname, "public", "catalogo.html"));
 });
 
 app.get("/detalle", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "detalle.html"));
+  res.sendFile(path.join(__dirname, "public", "detalle.html"));
 });
 
 app.get("/historial", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "historial.html"));
+  res.sendFile(path.join(__dirname, "public", "historial.html"));
 });
 
 app.get("/carrito", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "carrito.html"));
+  res.sendFile(path.join(__dirname, "public", "carrito.html"));
 });
 
-app.listen(PORT, () => {
-  console.log(`BookNest corriendo en http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  const url = process.env.RENDER_EXTERNAL_URL || `http://localhost:${PORT}`;
+  console.log(`BookNest disponible en ${url}`);
 });

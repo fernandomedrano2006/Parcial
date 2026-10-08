@@ -5,7 +5,7 @@ Proyecto de librería multiformato para la evaluación parcial de DAW.
 ## Estructura
 
 - `backend/`: API REST en Node.js con Express
-- `frontend/`: versión mínima del frontend para consumir la API
+- `public/`: frontend estático servido por Express y Vercel
 
 ## Ejecutar backend
 
@@ -24,12 +24,12 @@ La API queda disponible en:
 
 ## Ejecutar frontend
 
-Puedes abrir el archivo `frontend/index.html` en el navegador o servir la carpeta con un servidor estático.
+Puedes abrir el archivo `public/index.html` en el navegador o iniciar el servidor desde la raíz del proyecto.
 
 Ejemplo:
 
 ```bash
-cd frontend
+cd public
 python -m http.server 8000
 ```
 
