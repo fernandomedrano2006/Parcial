@@ -18,11 +18,8 @@ app.use(express.static(path.join(__dirname, "frontend")));
 app.get("/api", (req, res) => {
   res.json({
     message: "API BookNest funcionando correctamente",
+    recursos: ["productos", "categorias", "pedidos", "promociones"],
     endpoints: [
-      "/api/usuarios",
-      "/api/usuarios/:id",
-      "/api/categorias",
-      "/api/categorias/:id",
       "/api/productos",
       "/api/productos/:id",
       "/api/categorias",
@@ -31,8 +28,6 @@ app.get("/api", (req, res) => {
       "/api/pedidos/:id",
       "/api/promociones",
       "/api/promociones/:id",
-      "/api/historial",
-      "/api/historial/:usuarioId",
     ],
   });
 });
